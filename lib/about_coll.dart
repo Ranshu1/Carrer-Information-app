@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_task/college.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OpCollegeScreen extends StatefulWidget {
@@ -25,11 +24,18 @@ class _OpCollegeScreenState extends State<OpCollegeScreen>
   _scrollListener() {
     Future.delayed(Duration.zero, () {
       setState(() {
-      _scrollPosition = _scrollController.position.pixels;
+        _scrollPosition = _scrollController.position.pixels;
+      });
     });
-    });
+
     
   }
+  @override
+    void dispose() {
+      _scrollController.dispose();
+      
+      super.dispose();
+    }
 
   @override
   void initState() {

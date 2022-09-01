@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isLoading = true;
-  int _value = 0;
+  int _value = 1;
   int _selectedItem = 0;
   bool navigateToPage = false;
   TextEditingController searchController = new TextEditingController();
@@ -526,7 +525,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Radio(
                         value: 3,
-                        groupValue: 3,
+                        groupValue: _value,
                         onChanged: (value) {
                           setState(() {
                             _value = value as int;
